@@ -11,11 +11,12 @@ export const MainContainer = ({ children }: MainContainerProps) => {
     <Container
       as="main"
       maxW="container.md" 
-      minH="100vh"        
+      minH="100dvh"        
       display="flex"
       flexDirection="column"
       justifyContent="center" 
-      px={8}
+      p={8}
+      m={8}
     >
       {children}
     </Container>
