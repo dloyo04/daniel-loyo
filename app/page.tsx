@@ -1,11 +1,16 @@
-import { Button, HStack } from "@chakra-ui/react"
+import { AboutSection, ContactSection, ProjectsSection } from "@/UIComponents";
+import { HeroSection, MainContainer } from "@/UIComponents/shared";
+import { VStack } from "@chakra-ui/react";
 
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <HStack>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-    </HStack>
-  )
+    <MainContainer>
+      <VStack  align="center">
+        <HeroSection />
+        <ProjectsSection />
+        <AboutSection />
+        <ContactSection />
+      </VStack>
+    </MainContainer>
+  );
 }
