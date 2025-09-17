@@ -1,10 +1,19 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Bio } from '@/features/portfolio/domain/portfolio.types';
+import { Heading, Text, VStack } from '@chakra-ui/react';
 
-export const AboutSection = () => {
+interface AboutSectionProps {
+  bio: Bio;
+}
+
+export const AboutSection = ({ bio }: AboutSectionProps) => {
   return (
-    <Box as="section" py={20}>
-      <Heading as="h2" size="2xl">Sobre Mí</Heading>
-      {/* Aquí irá la biografía */}
-    </Box>
+    <VStack as="section" align="stretch" gap={8}>
+      <Heading as="h2" size="xl">{bio.heading}</Heading>
+      {bio.paragraphs.map((paragraph, index) => (
+        <Text key={index} color="secondary">
+          {paragraph}
+        </Text>
+      ))}
+    </VStack>
   );
 };

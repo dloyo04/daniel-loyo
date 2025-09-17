@@ -4,16 +4,18 @@ import { HeroSection } from "../UIComponents";
 import { ProjectsSection } from "../UIComponents";
 import { AboutSection } from "../UIComponents";
 import { ContactSection } from "../UIComponents";
-import { getAllProjectsUseCase } from "../features/portfolio/";
+import { loadHomePageData } from "@/features";
+
 
 export default async function HomePage() {
-  const projects = await getAllProjectsUseCase();
+
+  const { projects, bio } = await loadHomePageData();
 
   return (
     <MainContainer>
-      <VStack gap={20} align="center">
+      <VStack gap={20} align="stretch">
         <HeroSection />
-        <AboutSection />
+        <AboutSection bio={bio} />
         <ProjectsSection projects={projects} />
         <ContactSection />
       </VStack>

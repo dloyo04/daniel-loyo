@@ -47,7 +47,7 @@ export const HeroSection = () => {
         <MotionHStack align="center" gap={3} variants={itemVariants}>
           <Box bg="green.400" w="10px" h="10px" borderRadius="full" />
           <Text fontSize="md" color="secondary">
-          Disponible para nuevos proyectos
+            Disponible para nuevos proyectos
           </Text>
         </MotionHStack>
       </VStack>
