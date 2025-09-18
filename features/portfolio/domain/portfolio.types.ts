@@ -13,7 +13,7 @@ export interface Project {
 }
 
 export interface SocialLink {
-  platform: 'GitHub' | 'LinkedIn' | 'Twitter' | 'Email';
+  platform: 'GitHub' | 'LinkedIn'  | 'Email';
   url: string;
 }
 
@@ -26,4 +26,8 @@ export interface Cardpresentation {
   imageUrl: string;
   title: string;
   subtitle: string;
+}
+
+export interface SiteFooterProps {
+  socialLinks: Omit<SocialLink[], 'Email'>;
 }

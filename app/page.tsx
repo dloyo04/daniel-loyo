@@ -1,15 +1,12 @@
 import { VStack } from "@chakra-ui/react";
-import { MainContainer } from "../UIComponents";
-import { HeroSection } from "../UIComponents";
-import { ProjectsSection } from "../UIComponents";
-import { AboutSection } from "../UIComponents";
-import { ContactSection } from "../UIComponents";
+
 import { loadHomePageData } from "@/features";
+import { AboutSection, ContactSection, HeroSection, MainContainer, ProjectsSection, SiteFooter } from "@/UIComponents";
 
 
 export default async function HomePage() {
 
-  const { projects, bio } = await loadHomePageData();
+  const { projects, bio, socialLinks } = await loadHomePageData();
 
   return (
     <MainContainer>
@@ -17,7 +14,8 @@ export default async function HomePage() {
         <HeroSection />
         <AboutSection bio={bio} />
         <ProjectsSection projects={projects} />
-        <ContactSection />
+        <ContactSection socialLinks={socialLinks}/>
+        <SiteFooter socialLinks={socialLinks}/>
       </VStack>
     </MainContainer>
   );

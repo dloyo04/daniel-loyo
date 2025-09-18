@@ -9,7 +9,7 @@ interface ProjectsSectionProps {
 export const ProjectsSection = ({ projects }: ProjectsSectionProps) => {
   return (
     <VStack as="section" align="stretch" gap={8}>
-      <Heading as="h2" size="xl" textAlign="center">Proyectos</Heading>
+      <Heading as="h2" size="xl">Proyectos</Heading>
       <SimpleGrid columns={{  md: 1 }}>
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />

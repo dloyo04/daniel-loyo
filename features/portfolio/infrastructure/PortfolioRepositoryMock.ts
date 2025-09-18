@@ -36,7 +36,7 @@ export const mockBio: Bio = {
 };
 
 export const mockSocialLinks: SocialLink[] = [
-  { platform: 'GitHub', url: 'https://github.com/tu-usuario' },
-  { platform: 'LinkedIn', url: 'https://linkedin.com/in/tu-usuario' },
-  { platform: 'Email', url: 'mailto:tu-email@example.com' },
+  { platform: 'GitHub', url: 'https://github.com/dloyo04' },
+  { platform: 'LinkedIn', url: 'https://linkedin.com/in/daniel-loyo-dev' },
+  { platform: 'Email', url: 'mailto:dloyo04@gmail.com' },
 ];

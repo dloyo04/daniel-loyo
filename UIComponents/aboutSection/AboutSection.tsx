@@ -7,7 +7,7 @@ interface AboutSectionProps {
 
 export const AboutSection = ({ bio }: AboutSectionProps) => {
   return (
-    <VStack as="section" align="stretch" gap={8}>
+    <VStack as="section" align="stretch" gap={4}>
       <Heading as="h2" size="xl">{bio.heading}</Heading>
       {bio.paragraphs.map((paragraph, index) => (
         <Text key={index} color="secondary">
