@@ -3,6 +3,7 @@ import { Project, SocialLink, Bio } from '../domain/portfolio.types';
 export const mockProjects: Project[] = [
   {
     id: 'proj-1',
+    period: '2023 - Presente', 
     title: 'Proyecto "Comestero Argentina"',
     description: 'Una plataforma web completa para la gestión de productos y pedidos, construida con Clean Architecture y Next.js.',
     imageUrl: '/images/placeholder-project-1.png', // Usaremos placeholders por ahora
@@ -15,6 +16,7 @@ export const mockProjects: Project[] = [
   },
   {
     id: 'proj-2',
+    period: '2020 - 2022', 
     title: 'Mi Portafolio Personal',
     description: 'El mismo sitio que estás viendo ahora, enfocado en animaciones y una experiencia de usuario fluida.',
     imageUrl: '/images/placeholder-project-2.png',

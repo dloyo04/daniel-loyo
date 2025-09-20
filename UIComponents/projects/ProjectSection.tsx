@@ -1,20 +1,44 @@
+"use client";
+
 import { Project } from '@/features/portfolio/domain/portfolio.types';
-import {  Heading, SimpleGrid, VStack } from '@chakra-ui/react';
+import { Heading, VStack } from '@chakra-ui/react'; // Importamos VStack en lugar de SimpleGrid
 import { ProjectCard } from './ProjectCard';
+import { motion, Variants } from 'framer-motion';
+import { MotionVStack } from '../shared';
+
+const listContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1, 
+    },
+  },
+};
 
 interface ProjectsSectionProps {
   projects: Project[];
 }
 
 export const ProjectsSection = ({ projects }: ProjectsSectionProps) => {
+  const MotionVStackContainer = motion(VStack);
+
   return (
-    <VStack as="section" align="stretch" gap={8}>
+    <MotionVStack as="section" align="stretch" gap={8}>
       <Heading as="h2" size="xl">Proyectos</Heading>
-      <SimpleGrid columns={{  md: 1 }}>
+      
+      <MotionVStackContainer
+        as="section"
+        variants={listContainerVariants}
+        initial="hidden"
+        animate="visible"
+        align="stretch"
+        gap={4} 
+      >
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
-      </SimpleGrid>
-    </VStack>
+      </MotionVStackContainer>
+    </MotionVStack>
   );
 };

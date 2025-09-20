@@ -11,7 +11,7 @@ const iconMap = {
 
 export const SiteFooter = ({ socialLinks }: SiteFooterProps) => {
   return (
-    <HStack as="footer" py={10} gap={4}>
+    <HStack as="footer" px={4} pt={4} gap={4}>
       <Text color="secondary" fontSize="sm">
         © 2025 Daniel Loyo
       </Text>

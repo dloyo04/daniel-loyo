@@ -1,36 +1,81 @@
+"use client";
+
 import { Project } from '@/features/portfolio/domain/portfolio.types';
-import { Heading, Text, VStack, Image, HStack, Tag } from '@chakra-ui/react';
+import { Heading, Text, VStack, HStack, Box, Link } from '@chakra-ui/react';
+import { motion, Variants } from 'framer-motion';
+import { LuArrowUpRight } from 'react-icons/lu';
+
+const MotionBox = motion(Box);
+
+const listItemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { type: 'spring', stiffness: 200, damping: 20 }
+  },
+};
+
+const arrowVariants: Variants = {
+  initial: { x: 0, y: 0 },
+  hover: { x: 4, y: -4, transition: { type: 'spring', stiffness: 300 } }, 
+};
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
-  return (
-    <VStack
-      align="stretch" 
-      borderWidth="1px"
-      borderRadius="lg"
-      overflow="hidden"
-      gap={4}
-      p={5}
-    >
-      <Image src={project.imageUrl} alt={`Imagen del proyecto ${project.title}`} borderRadius="md" />
-      
-      <VStack align="stretch" gap={2}>
-        <Heading as="h3" size="md">{project.title}</Heading>
-        <Text fontSize="sm" color="secondary" lineClamp={3}>
-          {project.description}
-        </Text>
-      </VStack>
+  const tagString = project.tags.map(tag => tag.name).join(' • ');
 
-      <HStack wrap="wrap">
-        {project.tags.map((tag) => (
-          <Tag.Root size="sm" key={tag.name} variant="solid">
-            <Tag.Label>{tag.name}</Tag.Label>
-          </Tag.Root>
-        ))}
-      </HStack>
-    </VStack>
+  return (
+    <MotionBox variants={listItemVariants}>
+      <motion.div
+        initial="initial"
+        whileHover="hover" 
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        
+        variants={{
+          initial: { y: 0, x: 0},
+          hover: { y: -5 , x: 1 },
+        }}
+      >
+        <Link 
+          href={project.projectUrl ?? '#'} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          _hover={{ textDecoration: 'none' }}
+          display="block"
+          p={4}
+          borderRadius="md"
+          
+          transitionProperty="background"
+          transitionDuration="200ms"
+        >
+          <HStack align="flex" gap={8}>
+            <Text as="span" fontSize="sm" color="secondary" w="120px" flexShrink={0} pt={1}>
+              {project.period}
+            </Text>
+
+            <VStack align="stretch" gap={1}>
+              <HStack justify="space-between">
+                <Heading as="h3" size="md" color="primary">
+                  {project.title}
+                </Heading>
+                <MotionBox variants={arrowVariants}>
+                  <LuArrowUpRight size="14px" />
+                </MotionBox>
+              </HStack>
+              <Text fontSize="md" color="secondary">
+                {project.description}
+              </Text>
+              <Text fontSize="sm" color="secondary" pt={1}>
+                {tagString}
+              </Text>
+            </VStack>
+          </HStack>
+        </Link>
+      </motion.div>
+    </MotionBox>
   );
 };

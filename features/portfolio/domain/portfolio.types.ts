@@ -4,6 +4,7 @@ export interface Tag {
 
 export interface Project {
   id: string;
+  period: string;
   title: string;
   projectUrl?: string ;
   description: string;
