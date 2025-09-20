@@ -9,9 +9,9 @@ interface AboutSectionProps {
 export const AboutSection = ({ bio }: AboutSectionProps) => {
   return (
     <MotionVStack as="section" align="stretch" gap={4}>
-      <Heading as="h2" size="xl">{bio.heading}</Heading>
+      <Heading as="h2" textStyle={"h2"}>{bio.heading}</Heading>
       {bio.paragraphs.map((paragraph, index) => (
-        <Text key={index} color="secondary">
+        <Text key={index} textStyle={"body"}>
           {paragraph}
         </Text>
       ))}

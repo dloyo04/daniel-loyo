@@ -52,7 +52,7 @@ export const ContactForm = ({ onCancel }: ContactFormProps) => {
     <form action={formAction}>
       <VStack gap={4} align="stretch">
         <Field.Root invalid={!!clientErrors.email || !!state.errors?.email}>
-          <Field.Label fontSize="sm">Tu Email</Field.Label>
+          <Field.Label textStyle={"body"}>Tu Email</Field.Label>
           <Input {...register('email')} type="email" focusRing={"none"}  width={"1/2"}/>
           <Field.ErrorText>
             {clientErrors.email?.message || state.errors?.email?.[0]}
@@ -60,7 +60,7 @@ export const ContactForm = ({ onCancel }: ContactFormProps) => {
         </Field.Root>
 
         <Field.Root invalid={!!clientErrors.message || !!state.errors?.message}>
-          <Field.Label fontSize="sm">Mensaje</Field.Label>
+          <Field.Label textStyle={"body"}>Mensaje</Field.Label>
           <Textarea {...register('message')} focusRing={"none"} rows={3} />
           <Field.ErrorText>
             {clientErrors.message?.message || state.errors?.message?.[0]}

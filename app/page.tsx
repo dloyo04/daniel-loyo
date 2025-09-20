@@ -11,7 +11,7 @@ export default async function HomePage() {
   return (
     <>
     <MainContainer>
-      <VStack gap={20} align="stretch">
+      <VStack gap={"16"}  align="stretch">
         <HeroSection />
         <AboutSection bio={bio} />
         <ProjectsSection projects={projects} />

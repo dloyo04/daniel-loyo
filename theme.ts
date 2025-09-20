@@ -5,8 +5,8 @@ const config = defineConfig({
     //TODO verificar fuente final
     tokens: {
       fonts: {
-        body: { value: "Inter, sans-serif" },
-        heading: { value: "Inter, sans-serif" },
+        body: { value: "var(--font-satoshi)" },
+        heading: { value: "var(--font-satoshi)" },
       },
     },
 
@@ -18,7 +18,7 @@ const config = defineConfig({
         heading: { // Para Títulos (H1, H2, H3)
           value: { 
             base: "{colors.gray.900}", // Negro en modo claro
-            _dark: "{colors.white}"      // Blanco en modo oscuro
+            _dark: "{colors.white.200}"      // Blanco en modo oscuro
           },
         },
         text: { // Para Párrafos / Texto principal
@@ -48,22 +48,22 @@ const config = defineConfig({
     textStyles: {
       h1: {
         value: {
-          fontSize: "2xl",      // 24px
-          fontWeight: "medium", // 500 (Delgado con jerarquía)
+          fontSize: "xl",      // 24px
+          fontWeight: "normal", // 500 (Delgado con jerarquía)
           color: "heading",
         },
       },
       h2: {
         value: {
-          fontSize: "xl",       // 20px
-          fontWeight: "medium", // 500
+          fontSize: "lg",       // 20px
+          fontWeight: "normal", // 500
           color: "heading",
         },
       },
       h3: {
         value: {
           fontSize: "md",       // 16px
-          fontWeight: "medium", // 500
+          fontWeight: "normal", // 500
           color: "heading",
         },
       },

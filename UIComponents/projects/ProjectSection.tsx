@@ -24,8 +24,8 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps) => {
   const MotionVStackContainer = motion(VStack);
 
   return (
-    <MotionVStack as="section" align="stretch" gap={8}>
-      <Heading as="h2" size="xl">Proyectos</Heading>
+    <MotionVStack as="section" align="stretch" gap={4}>
+      <Heading as="h2" textStyle={"h2"}>Proyectos</Heading>
       
       <MotionVStackContainer
         as="section"

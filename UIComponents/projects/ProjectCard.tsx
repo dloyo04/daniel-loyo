@@ -46,30 +46,30 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           rel="noopener noreferrer" 
           _hover={{ textDecoration: 'none' }}
           display="block"
-          p={4}
+          py={3}
           borderRadius="md"
           
           transitionProperty="background"
           transitionDuration="200ms"
         >
           <HStack align="flex" gap={8}>
-            <Text as="span" fontSize="sm" color="secondary" w="120px" flexShrink={0} pt={1}>
+            <Text as="span" textStyle={"muted"} w="120px" flexShrink={0} pt={1}>
               {project.period}
             </Text>
 
             <VStack align="stretch" gap={1}>
               <HStack justify="space-between">
-                <Heading as="h3" size="md" color="primary">
+                <Heading as="h3" textStyle={"h3"}>
                   {project.title}
                 </Heading>
                 <MotionBox variants={arrowVariants}>
                   <LuArrowUpRight size="14px" />
                 </MotionBox>
               </HStack>
-              <Text fontSize="md" color="secondary">
+              <Text textStyle={"body"}>
                 {project.description}
               </Text>
-              <Text fontSize="sm" color="secondary" pt={1}>
+              <Text textStyle={"muted"} pt={1}>
                 {tagString}
               </Text>
             </VStack>
