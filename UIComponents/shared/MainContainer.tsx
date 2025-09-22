@@ -14,8 +14,8 @@ export const MainContainer = ({ children }: MainContainerProps) => {
       display="flex"
       flexDirection="column"
       justifyContent="center"
-      py={{ base: 12, md: 20 }}
-      px={{ base: 4, md: 0 }}
+      py={{ base: 20, md: 28 }}
+      px={{ base: 6, md: 0 }}
     >
       {children}
     </Box>

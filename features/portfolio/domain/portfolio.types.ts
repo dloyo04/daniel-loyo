@@ -14,8 +14,9 @@ export interface Project {
 }
 
 export interface SocialLink {
-  platform: 'GitHub' | 'LinkedIn'  | 'Email';
+  platform: 'GitHub' | 'LinkedIn'  | 'Email' | 'Curriculum' ;
   url: string;
+  handle: string;
 }
 
 export interface Bio {
@@ -23,7 +24,7 @@ export interface Bio {
   paragraphs: string[];
 }
 
-export interface Cardpresentation {
+export interface Presentation {
   imageUrl: string;
   title: string;
   subtitle: string;

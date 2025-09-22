@@ -16,11 +16,11 @@ const listContainerVariants: Variants = {
   },
 };
 
-interface ProjectsSectionProps {
+interface ProjectSectionProps {
   projects: Project[];
 }
 
-export const ProjectsSection = ({ projects }: ProjectsSectionProps) => {
+export const ProjectSection = ({ projects }: ProjectSectionProps) => {
   const MotionVStackContainer = motion(VStack);
 
   return (

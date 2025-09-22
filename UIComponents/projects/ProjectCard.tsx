@@ -44,10 +44,11 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           href={project.projectUrl ?? '#'} 
           target="_blank" 
           rel="noopener noreferrer" 
-          _hover={{ textDecoration: 'none' }}
           display="block"
+          _hover={{textDecoration: 'none'}}
           py={3}
           borderRadius="md"
+          cursor={"pointer"}
           
           transitionProperty="background"
           transitionDuration="200ms"

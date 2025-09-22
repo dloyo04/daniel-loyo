@@ -1,12 +1,13 @@
-import { getAllProjectsUseCase, getBioUseCase, getSocialLinksUseCase } from "../usecases";
-
+import { getAllProjectsUseCase, getBioUseCase, getPresentationUseCase, getSocialLinksUseCase } from "../usecases";
 
 export const loadHomePageData = async () => {
-  const [projects, bio, socialLinks] = await Promise.all([
+  const [projects, bio, presentation, socialLinks] = await Promise.all([
     getAllProjectsUseCase(),
     getBioUseCase(),
-    getSocialLinksUseCase(),
+    getPresentationUseCase(), 
+    getSocialLinksUseCase(),  
   ]);
 
-  return { projects, bio, socialLinks };
+
+  return { projects, bio, socialLinks, presentation };
 };

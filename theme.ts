@@ -48,7 +48,7 @@ const config = defineConfig({
     textStyles: {
       h1: {
         value: {
-          fontSize: "xl",      // 24px
+          fontSize: "3xl",      // 24px
           fontWeight: "normal", // 500 (Delgado con jerarquía)
           color: "heading",
         },
