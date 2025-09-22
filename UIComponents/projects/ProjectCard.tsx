@@ -64,7 +64,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                   {project.title}
                 </Heading>
                 <MotionBox variants={arrowVariants}>
-                  <LuArrowUpRight size="14px" />
+                  <LuArrowUpRight size="12px" />
                 </MotionBox>
               </HStack>
               <Text textStyle={"body"}>

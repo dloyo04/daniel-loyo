@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import { Provider } from "@/components/ui/provider";
+import { SiteFooter, ThemeSwitcher } from "@/UIComponents";
+import { loadHomePageData } from "@/features";
 
 const satoshi = localFont({
   src: './fonts/Satoshi-Variable.woff2', 
@@ -13,6 +15,9 @@ export const metadata: Metadata = {
   description: "Portafolio de desarrollo de Daniel Loyo, enfocado en Next.js, Arquitectura Limpia y experiencias de usuario elegantes.",
 };
 
+  const { socialLinks } = await loadHomePageData();
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,7 +26,13 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="es">
       <body className={`${satoshi.variable} antialiased`}>
-        <Provider>{children}</Provider>
+
+        <Provider>
+          {children}
+          <ThemeSwitcher />  
+          <SiteFooter socialLinks={socialLinks}/>
+        </Provider>
+
       </body>
     </html>
   );
