@@ -14,7 +14,7 @@ const iconMap = {
 export const SiteFooter = ({ socialLinks }: SiteFooterProps) => {
   return (
     <HStack as="footer" px={4} pt={4} gap={4}>
-      <Text color="secondary" fontSize="sm">
+      <Text color="secondary" fontSize={{base: "xs", "md": "sm"}}>
         © 2025 Daniel Loyo
       </Text>
       
@@ -28,7 +28,7 @@ export const SiteFooter = ({ socialLinks }: SiteFooterProps) => {
             <Link key={link.platform} href={link.url} target='_blank' rel='noopener noreferrer'>
               <IconButton
                 aria-label={`Enlace a mi ${link.platform}`}
-                size="sm"
+                size={{base: "xs", md:"sm"}}
                 variant="ghost"
                 focusRing={"none"}
               >

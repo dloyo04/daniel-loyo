@@ -1,7 +1,7 @@
 "use client";
 
 import { Project } from '@/features/portfolio/domain/portfolio.types';
-import { Heading, Text, VStack, HStack, Box, Link } from '@chakra-ui/react';
+import { Heading, Text, VStack, HStack, Box, Link, Flex } from '@chakra-ui/react';
 import { motion, Variants } from 'framer-motion';
 import { LuArrowUpRight } from 'react-icons/lu';
 
@@ -53,8 +53,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           transitionProperty="background"
           transitionDuration="200ms"
         >
-          <HStack align="flex" gap={8}>
-            <Text as="span" textStyle={"muted"} w="120px" flexShrink={0} pt={1}>
+          <Flex align="flex-start"  direction={{ base: 'column', md: 'row' }} gap={{base: 2, md: 8}} >
+            <Text as="span" textStyle={"muted"} w={{base: "full",md: "120px"}} flexShrink={0} pt={1}>
               {project.period}
             </Text>
 
@@ -74,7 +74,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                 {tagString}
               </Text>
             </VStack>
-          </HStack>
+          </Flex>
         </Link>
       </motion.div>
     </MotionBox>

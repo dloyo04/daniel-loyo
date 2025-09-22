@@ -48,13 +48,13 @@ export const ContactSection = ({ socialLinks }: ContactSectionProps) => {
     <MotionVStack as="section" align="stretch" gap={8}>
       <Heading textStyle="h2">Hablemos</Heading>
 
-      <SimpleGrid columns={2} columnGap={8} rowGap={4} templateColumns="120px 1fr">
+      <SimpleGrid columns={{base:1, md: 2}} columnGap={ 8 } rowGap={{base: 1, md: 4}} templateColumns={{ md: "120px 1fr"}}>
         {otherLinks.map((link) => (
           <React.Fragment key={link.platform}>
             <GridItem>
               <Text textStyle="muted">{link.platform}</Text>
             </GridItem>
-            <GridItem>
+            <GridItem mb={{base: 3}}>
               <motion.div initial="initial" whileHover="hover" style={{ width: 'fit-content' }}>
                 <Link href={link.url} target="_blank" rel="noopener noreferrer" position="relative" _hover={{ textDecoration: 'none', color: 'primary' }}>
                   <HStack>

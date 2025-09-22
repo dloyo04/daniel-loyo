@@ -54,11 +54,11 @@ export const HeroSection = ({ presentation }: HeroSectionProps) => {
           transition={{ type: "tween" }}
         />
       <VStack align="flex-start" >
-        <MotionHeading as="h1" textAlign="center" textStyle={"h1"} variants={itemVariants}>
+        <MotionHeading as="h1" textAlign="start" textStyle={"h1"} variants={itemVariants}>
           {presentation.title}
         </MotionHeading>
 
-        <MotionText textStyle={"body"}  textAlign="center" color="secondary" variants={itemVariants}>
+        <MotionText textStyle={"body"}  textAlign="start" color="secondary" variants={itemVariants}>
           {presentation.subtitle}
         </MotionText>
       </VStack>
