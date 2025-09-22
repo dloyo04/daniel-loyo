@@ -2,16 +2,19 @@
 
 import type { IconButtonProps, SpanProps } from "@chakra-ui/react"
 import { ClientOnly, IconButton, Skeleton, Span } from "@chakra-ui/react"
+import { AnimatePresence, motion } from "framer-motion"
 import { ThemeProvider, useTheme } from "next-themes"
 import type { ThemeProviderProps } from "next-themes"
 import * as React from "react"
-import { LuMoon, LuSun } from "react-icons/lu"
+import {  WiMoonAltWaningCrescent4 } from "react-icons/wi";
 
 export interface ColorModeProviderProps extends ThemeProviderProps {}
 
+
+
 export function ColorModeProvider(props: ColorModeProviderProps) {
   return (
-    <ThemeProvider attribute="class" disableTransitionOnChange {...props} />
+    <ThemeProvider attribute="class" disableTransidisableTransitionOnChangetionOnChange {...props} />
   )
 }
 
@@ -32,7 +35,7 @@ export function useColorMode(): UseColorModeReturn {
   return {
     colorMode: colorMode as ColorMode,
     setColorMode: setTheme,
-    toggleColorMode,
+    toggleColorMode,  
   }
 }
 
@@ -43,7 +46,7 @@ export function useColorModeValue<T>(light: T, dark: T) {
 
 export function ColorModeIcon() {
   const { colorMode } = useColorMode()
-  return colorMode === "dark" ? <LuMoon /> : <LuSun />
+  return colorMode === "dark" ? <WiMoonAltWaningCrescent4 /> : < WiMoonAltWaningCrescent4/>
 }
 
 interface ColorModeButtonProps extends Omit<IconButtonProps, "aria-label"> {}
@@ -52,7 +55,7 @@ export const ColorModeButton = React.forwardRef<
   HTMLButtonElement,
   ColorModeButtonProps
 >(function ColorModeButton(props, ref) {
-  const { toggleColorMode } = useColorMode()
+  const { toggleColorMode, colorMode } = useColorMode()
   return (
     <ClientOnly fallback={<Skeleton boxSize="9" />}>
       <IconButton
@@ -63,13 +66,23 @@ export const ColorModeButton = React.forwardRef<
         ref={ref}
         {...props}
         css={{
-          _icon: {
-            width: "5",
-            height: "5",
+          "& svg": {
+            width: "6",
+            height: "6",
           },
         }}
-      >
-        <ColorModeIcon />
+        >
+          <AnimatePresence mode="popLayout" initial={false}>
+          <motion.div
+            key={colorMode}
+            initial={{ y: 0, opacity: 0, rotate: -180 }}
+            animate={{ y: 0, opacity: 1, rotate: 0 }}
+            exit={{ y: 0, opacity: 0, rotate: 180 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ColorModeIcon />
+          </motion.div>
+        </AnimatePresence>
       </IconButton>
     </ClientOnly>
   )
