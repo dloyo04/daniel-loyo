@@ -1,5 +1,6 @@
 export * from "./aboutSection"
-export * from "./ContactSection"
+export * from "./contactSection"
+export * from "./heroSection"
 export * from "./projects"
 export * from "./shared"
 export * from "./siteFooter"

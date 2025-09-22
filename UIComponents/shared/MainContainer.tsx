@@ -1,6 +1,4 @@
-
-
-import { Container } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 interface MainContainerProps {
   children: React.ReactNode;
@@ -8,17 +6,18 @@ interface MainContainerProps {
 
 export const MainContainer = ({ children }: MainContainerProps) => {
   return (
-    <Container
+    <Box
       as="main"
-      maxW="container.md" 
-      minH="100dvh"        
+      mx="auto"
+      maxW="540px" 
+      minH="100dvh"
       display="flex"
       flexDirection="column"
-      justifyContent="center" 
-      p={8}
-      m={8}
+      justifyContent="center"
+      py={{ base: 20, md: 28 }}
+      px={{ base: 6, md: 0 }}
     >
       {children}
-    </Container>
+    </Box>
   );
 };
