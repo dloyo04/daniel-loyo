@@ -6,7 +6,8 @@ import { useFormStatus } from 'react-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { sendContactFormAction, FormState } from '@/features';
+import { FormState, sendContactFormAction } from '@/features/portfolio/application/action/sendContactEMail.action';
+import { toaster } from '@/components/ui/toaster';
 
 const contactSchema = z.object({
   email: z.email({ message: 'Por favor, introduce un email válido.' }),
@@ -30,7 +31,6 @@ function SubmitButton() {
 
 export const ContactForm = ({ onCancel }: ContactFormProps) => {
   const initialState: FormState = { status: 'idle', message: '' };
-  
   const [state, formAction] = useActionState(sendContactFormAction, initialState);
 
   const {
@@ -43,8 +43,28 @@ export const ContactForm = ({ onCancel }: ContactFormProps) => {
 
   useEffect(() => {
     if (state.status === 'success') {
+      setTimeout(() =>{
+        toaster.create({
+        title: "Mensaje Enviado!",
+        description: "Gracias por contactarme. Te responderé pronto.",
+        type: "success",
+        duration: 7000,
+        closable: true,
+      });
+      }, 0);
       onCancel(); 
       reset();    
+    }
+    if (state.status === 'error' && !state.errors) {
+      setTimeout(() =>{
+       toaster.create({
+        title: "Error al Enviar",
+        description: state.message,
+        type: "error",
+        duration: 5000,
+        closable: true,
+      });
+    }, 0);
     }
   }, [state, onCancel, reset]);
 

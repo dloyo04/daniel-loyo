@@ -1,7 +1,7 @@
 "use client";
 
 import { Project } from '@/features/portfolio/domain/portfolio.types';
-import { Heading, VStack } from '@chakra-ui/react'; // Importamos VStack en lugar de SimpleGrid
+import { Heading, VStack } from '@chakra-ui/react';
 import { ProjectCard } from './ProjectCard';
 import { motion, Variants } from 'framer-motion';
 import { MotionVStack } from '../shared';
