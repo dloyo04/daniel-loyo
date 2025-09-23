@@ -13,17 +13,15 @@ export const PageSkeleton = () => {
           </VStack>
         </HStack>
 
-        {/* Esqueleto del About Section */}
+        
         <VStack align="stretch" gap={4}>
           <Skeleton height="30px" width="40%" />
           <Skeleton height="21px" width="100%" />
           <Skeleton height="21px" width="90%" />
         </VStack>
 
-        {/* Esqueleto del Project Section */}
         <VStack align="stretch" gap={8}>
           <Skeleton height="30px" width="50%" />
-          {/* Esqueleto de una Project Card */}
           <HStack align="flex-start" gap={8}>
             <Skeleton height="21px" width="120px" />
             <VStack align="stretch" flex={1} gap={2}>

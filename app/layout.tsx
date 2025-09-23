@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import { Provider } from "@/components/ui/provider";
 import { SiteFooter, ThemeSwitcher } from "@/UIComponents";
 import { loadHomePageData } from "@/features";
+import { Toaster } from "@/components/ui/toaster";
 
 const satoshi = localFont({
   src: './fonts/Satoshi-Variable.woff2', 
@@ -29,7 +30,8 @@ export default function RootLayout({
 
         <Provider>
           {children}
-          <ThemeSwitcher />  
+          <Toaster />
+          <ThemeSwitcher />
           <SiteFooter socialLinks={socialLinks}/>
         </Provider>
 

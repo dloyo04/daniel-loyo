@@ -33,3 +33,8 @@ export interface Presentation {
 export interface SiteFooterProps {
   socialLinks: Omit<SocialLink[], 'Email'>;
 }
+
+export interface SendEmailParams {
+  email: string;
+  message: string;
+}
