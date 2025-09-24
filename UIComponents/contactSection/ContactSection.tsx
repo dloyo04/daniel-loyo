@@ -58,7 +58,7 @@ export const ContactSection = ({ socialLinks }: ContactSectionProps) => {
               <m.div initial="initial" whileHover="hover" style={{ width: 'fit-content' }}>
                 <Link href={link.url} target="_blank" rel="noopener noreferrer" position="relative" _hover={{ textDecoration: 'none', color: 'primary' }}>
                   <HStack>
-                    <Text _hover={{ textDecoration: 'underline' }} position="relative">{link.handle}</Text>
+                    <Text color={"primary"} _hover={{ textDecoration: 'underline' }} position="relative">{link.handle}</Text>
                     <MotionBox variants={arrowVariants}><LuArrowUpRight size="12px" /></MotionBox>
                   </HStack>
                 </Link>
