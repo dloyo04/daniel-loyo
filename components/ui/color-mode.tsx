@@ -2,7 +2,7 @@
 
 import type { IconButtonProps, SpanProps } from "@chakra-ui/react"
 import { ClientOnly, IconButton, Skeleton, Span } from "@chakra-ui/react"
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, m } from "framer-motion"
 import { ThemeProvider, useTheme } from "next-themes"
 import type { ThemeProviderProps } from "next-themes"
 import * as React from "react"
@@ -73,7 +73,7 @@ export const ColorModeButton = React.forwardRef<
         }}
         >
           <AnimatePresence mode="popLayout" initial={false}>
-          <motion.div
+          <m.div
             key={colorMode}
             initial={{ y: 0, opacity: 0, rotate: -180 }}
             animate={{ y: 0, opacity: 1, rotate: 0 }}
@@ -81,7 +81,7 @@ export const ColorModeButton = React.forwardRef<
             transition={{ duration: 0.3 }}
           >
             <ColorModeIcon />
-          </motion.div>
+          </m.div>
         </AnimatePresence>
       </IconButton>
     </ClientOnly>

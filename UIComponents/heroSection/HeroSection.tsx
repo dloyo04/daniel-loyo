@@ -2,11 +2,11 @@
 
 import { Presentation } from "@/features";
 import { Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
-const MotionHeading = motion(Heading);
-const MotionText = motion(Text);
-const MotionImage = motion(Image);
+const MotionHeading = m(Heading);
+const MotionText = m(Text);
+const MotionImage = m(Image);
 
 
 const containerVariants = {
@@ -35,7 +35,7 @@ interface HeroSectionProps {
 
 export const HeroSection = ({ presentation }: HeroSectionProps) => {
   return (
-    <motion.div
+    <m.div
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -63,6 +63,6 @@ export const HeroSection = ({ presentation }: HeroSectionProps) => {
         </MotionText>
       </VStack>
       </HStack>
-    </motion.div>
+    </m.div>
   );
 };
