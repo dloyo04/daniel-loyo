@@ -4,10 +4,10 @@ export const mockProjects: Project[] = [
   {
     id: 'proj-1',
     period: '2023 - Presente', 
-    title: 'Proyecto "Comestero Argentina"',
+    title: 'Mercadito Ecommerce',
     description: 'Una plataforma web completa para la gestión de productos y pedidos, construida con Clean Architecture y Next.js.',
-    imageUrl: '/images/placeholder-project-1.png',
-    repositoryUrl: 'https://github.com/tu-usuario/comestero',
+    imageUrl: '/images/mercadito.png',
+    projectUrl: 'https://ecommercewithreact-a20oe9y99-dloyo04s-projects.vercel.app/',
     tags: [
       { name: 'Next.js' },
       { name: 'TypeScript' },
@@ -17,10 +17,10 @@ export const mockProjects: Project[] = [
   {
     id: 'proj-2',
     period: '2020 - 2022', 
-    title: 'Mi Portafolio Personal',
+    title: 'Avoshop Ecommerce',
     description: 'El mismo sitio que estás viendo ahora, enfocado en animaciones y una experiencia de usuario fluida.',
-    imageUrl: '/images/placeholder-project-2.png',
-    repositoryUrl: 'https://github.com/tu-usuario/portfolio',
+    imageUrl: '/images/avoShop.png',
+    projectUrl: 'https://avocado-shop-b6mouuox0-dloyo04s-projects.vercel.app/',
     tags: [
       { name: 'Next.js',  },
       { name: 'Framer Motion', },
