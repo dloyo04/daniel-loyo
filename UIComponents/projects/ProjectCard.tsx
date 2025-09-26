@@ -1,11 +1,11 @@
 "use client";
 
 import { Project } from '@/features/portfolio/domain/portfolio.types';
-import { Heading, Text, VStack, HStack, Box, Link, Flex } from '@chakra-ui/react';
-import { motion, Variants } from 'framer-motion';
+import { Heading, Text, VStack, HStack, Box, Link, Flex, Image } from '@chakra-ui/react';
+import { m, Variants } from 'framer-motion';
 import { LuArrowUpRight } from 'react-icons/lu';
 
-const MotionBox = motion(Box);
+const MotionBox = m(Box);
 
 const listItemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -30,7 +30,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <MotionBox variants={listItemVariants}>
-      <motion.div
+      <m.div
         initial="initial"
         whileHover="hover" 
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -41,7 +41,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         }}
       >
         <Link 
-          href={project.projectUrl ?? '#'} 
+          href={project.projectUrl} 
           target="_blank" 
           rel="noopener noreferrer" 
           display="block"
@@ -59,6 +59,16 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             </Text>
 
             <VStack align="stretch" gap={1}>
+              {project.imageUrl && (
+                <Image
+                  src={project.imageUrl}
+                  alt={`Thumbnail del proyecto ${project.title}`}
+                  boxSize="50px"
+                  borderRadius={"md"}
+                  objectFit="cover"
+                  mt={1} 
+                />
+              )}
               <HStack justify="space-between">
                 <Heading as="h3" textStyle={"h3"}>
                   {project.title}
@@ -76,7 +86,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             </VStack>
           </Flex>
         </Link>
-      </motion.div>
+      </m.div>
     </MotionBox>
   );
 };

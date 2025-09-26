@@ -1,12 +1,12 @@
 "use client";
 
 import { VStack, type StackProps } from "@chakra-ui/react";
-import { motion, type HTMLMotionProps } from "framer-motion";
+import { m, type HTMLMotionProps } from "framer-motion";
 import { forwardRef } from "react";
 
 type MergedProps = Omit<StackProps, keyof HTMLMotionProps<"div">> & HTMLMotionProps<"div">;
 
-const MotionVStackComponent = motion(VStack);
+const MotionVStackComponent = m(VStack);
 
 export const MotionVStack = forwardRef<HTMLDivElement, MergedProps>((props, ref) => {
   return (

@@ -3,7 +3,7 @@
 import { Project } from '@/features/portfolio/domain/portfolio.types';
 import { Heading, VStack } from '@chakra-ui/react';
 import { ProjectCard } from './ProjectCard';
-import { motion, Variants } from 'framer-motion';
+import { m, Variants } from 'framer-motion';
 import { MotionVStack } from '../shared';
 
 const listContainerVariants: Variants = {
@@ -21,10 +21,10 @@ interface ProjectSectionProps {
 }
 
 export const ProjectSection = ({ projects }: ProjectSectionProps) => {
-  const MotionVStackContainer = motion(VStack);
+  const MotionVStackContainer = m(VStack);
 
   return (
-    <MotionVStack as="section" align="stretch" gap={4}>
+    <MotionVStack as="section" align="stretch" gap={6}>
       <Heading as="h2" textStyle={"h2"}>Proyectos</Heading>
       
       <MotionVStackContainer
@@ -33,7 +33,7 @@ export const ProjectSection = ({ projects }: ProjectSectionProps) => {
         initial="hidden"
         animate="visible"
         align="stretch"
-        gap={4} 
+        gap={8} 
       >
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
