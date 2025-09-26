@@ -1,6 +1,6 @@
 import { SocialLink } from "../../domain";
-import { mockSocialLinks } from "../../infrastructure";
+import { portfolioRepository } from "../../infrastructure";
 
 export const getSocialLinksUseCase = async (): Promise<SocialLink[]> => {
-  return mockSocialLinks;
+  return portfolioRepository.getSocialLinks();
 };

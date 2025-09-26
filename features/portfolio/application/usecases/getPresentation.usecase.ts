@@ -1,6 +1,6 @@
 import { Presentation } from "../../domain";
-import { mockPresentation } from "../../infrastructure";
+import { portfolioRepository } from "../../infrastructure";
 
 export const getPresentationUseCase = async (): Promise<Presentation> => {
-  return mockPresentation;
+  return portfolioRepository.getPresentation();
 };
