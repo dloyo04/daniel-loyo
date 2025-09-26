@@ -1,7 +1,7 @@
 "use server";
 
 import { z } from "zod";
-import { sendContactEmail } from "../../infrastructure/repository/EmailRepositoryResend";
+import { sendContactEmail } from "../../infrastructure/repository/resend/EmailRepositoryResend";
 
 export interface FormState {
   status: 'idle' | 'success' | 'error';
