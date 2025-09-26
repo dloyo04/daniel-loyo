@@ -1,4 +1,4 @@
-import { Project, SocialLink, Bio, Presentation } from '../domain/portfolio.types';
+import { Project, SocialLink, Bio, Presentation } from '../../../domain/portfolio.types';
 
 export const mockProjects: Project[] = [
   {

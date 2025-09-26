@@ -1,6 +1,6 @@
 import { Bio } from "../../domain";
-import { mockBio } from "../../infrastructure";
+import { portfolioRepository } from "../../infrastructure";
 
 export const getBioUseCase = async (): Promise<Bio> => {
-  return mockBio;
+  return portfolioRepository.getBio();
 };
