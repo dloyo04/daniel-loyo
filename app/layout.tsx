@@ -12,8 +12,35 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Daniel Loyo | Creative Developer",
-  description: "Portafolio de desarrollo de Daniel Loyo, enfocado en Next.js, Arquitectura Limpia y experiencias de usuario elegantes.",
+  metadataBase: new URL("https://daniel-loyo.vercel.app"), 
+  
+  title: {
+    default: "Daniel Loyo - Dev",
+    template: "%s | Daniel Loyo",
+  },
+
+  description: "Portafolio de Daniel Loyo Software Devepoler, ven a ver mis proyectos!",
+
+  openGraph: {
+    title: "Daniel Loyo - Dev",
+    description: "Explora mis proyectos de Desarrollo Web!",
+    url: "https://daniel-loyo.vercel.app", 
+    siteName: "Portafolio de Daniel Loyo",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "es_VE",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
   const { socialLinks } = await loadHomePageData();
