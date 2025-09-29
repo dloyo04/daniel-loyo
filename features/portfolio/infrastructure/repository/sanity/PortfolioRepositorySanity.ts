@@ -2,6 +2,7 @@ import { sanityClient } from "@/lib/sanity.client";
 import { groq, SanityDocument } from "next-sanity";
 import { Bio, Presentation, Project, SocialLink } from "@/features";
 
+
 const projectsQuery = groq`*[_type == "project"] | order(startDate desc){
   ...,
   "imageUrl": imageUrl.asset->url
