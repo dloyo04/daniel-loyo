@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Portafolio de Daniel Loyo",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://daniel-loyo.vercel.app/og-image.png",
         width: 1200,
         height: 630,
       },
