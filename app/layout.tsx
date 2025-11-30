@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import { Provider } from "@/components/ui/provider";
-import { SiteFooter, ThemeSwitcher } from "@/UIComponents";
+import { AnimatedBackground, SiteFooter, ThemeSwitcher } from "@/UIComponents";
 import { loadHomePageData } from "@/features";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -56,6 +56,7 @@ export default function RootLayout({
       <body className={`${satoshi.variable} antialiased`}>
 
         <Provider>
+          <AnimatedBackground />
           {children}
           <Toaster />
           <ThemeSwitcher />
