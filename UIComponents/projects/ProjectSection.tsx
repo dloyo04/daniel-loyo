@@ -11,7 +11,7 @@ const listContainerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, 
+      staggerChildren: 0.03, // Reducido de 0.1s a 0.03s
     },
   },
 };
@@ -26,14 +26,14 @@ export const ProjectSection = ({ projects }: ProjectSectionProps) => {
   return (
     <MotionVStack as="section" align="stretch" gap={6}>
       <Heading as="h2" textStyle={"h2"}>Proyectos</Heading>
-      
+
       <MotionVStackContainer
         as="section"
         variants={listContainerVariants}
         initial="hidden"
         animate="visible"
         align="stretch"
-        gap={8} 
+        gap={8}
       >
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />

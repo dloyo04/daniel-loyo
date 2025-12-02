@@ -14,7 +14,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.04, // Reducido de 0.2s a 0.04s
     },
   },
 };
@@ -25,7 +25,7 @@ const itemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.15, // Reducido de 0.5s a 0.15s
     },
   },
 };
@@ -41,27 +41,27 @@ export const HeroSection = ({ presentation }: HeroSectionProps) => {
       animate="visible"
     >
       <HStack align={"center"} gap={4}>
-      <MotionImage
+        <MotionImage
           src={presentation.imageUrl}
           alt={`Imagen de ${presentation.title}`}
-          boxSize="96px" 
+          boxSize="96px"
           borderRadius="full"
           objectFit="cover"
-          objectPosition="top" 
+          objectPosition="top"
           variants={itemVariants}
 
-          whileHover={{ scale: 1.1 }} 
+          whileHover={{ scale: 1.1 }}
           transition={{ type: "tween" }}
         />
-      <VStack align="flex-start" >
-        <MotionHeading as="h1" textAlign="start" textStyle={"h1"} variants={itemVariants}>
-          {presentation.title}
-        </MotionHeading>
+        <VStack align="flex-start" >
+          <MotionHeading as="h1" textAlign="start" textStyle={"h1"} variants={itemVariants}>
+            {presentation.title}
+          </MotionHeading>
 
-        <MotionText textStyle={"body"}  textAlign="start" color="secondary" variants={itemVariants}>
-          {presentation.subtitle}
-        </MotionText>
-      </VStack>
+          <MotionText textStyle={"body"} textAlign="start" color="secondary" variants={itemVariants}>
+            {presentation.subtitle}
+          </MotionText>
+        </VStack>
       </HStack>
     </m.div>
   );

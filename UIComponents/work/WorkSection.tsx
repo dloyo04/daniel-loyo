@@ -11,7 +11,7 @@ const listContainerVariants: Variants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.1,
+            staggerChildren: 0.03, // Reducido de 0.1s a 0.03s
         },
     },
 };
