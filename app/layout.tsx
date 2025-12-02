@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import { Provider } from "@/components/ui/provider";
-import { AnimatedBackground, SiteFooter, ThemeSwitcher } from "@/UIComponents";
-import { loadHomePageData } from "@/features";
+import { AnimatedBackground, ThemeSwitcher } from "@/UIComponents";
 import { Toaster } from "@/components/ui/toaster";
 
 const satoshi = localFont({
-  src: './fonts/Satoshi-Variable.woff2', 
-  display: 'swap', 
+  src: './fonts/Satoshi-Variable.woff2',
+  display: 'swap',
   variable: '--font-satoshi',
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://daniel-loyo.vercel.app"), 
-  
+  metadataBase: new URL("https://daniel-loyo.vercel.app"),
+
   title: {
     default: "Daniel Loyo - Dev",
     template: "%s | Daniel Loyo",
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Daniel Loyo - Dev",
     description: "Explora mis proyectos de Desarrollo Web!",
-    url: "https://daniel-loyo.vercel.app", 
+    url: "https://daniel-loyo.vercel.app",
     siteName: "Portafolio de Daniel Loyo",
     images: [
       {
@@ -43,8 +42,6 @@ export const metadata: Metadata = {
   },
 };
 
-  const { socialLinks } = await loadHomePageData();
-
 
 export default function RootLayout({
   children,
@@ -52,17 +49,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang="es">
+    <html suppressHydrationWarning lang="es" className="dark">
       <body className={`${satoshi.variable} antialiased`}>
-
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('theme') || 'dark';
+                document.documentElement.classList.remove('light', 'dark');
+                document.documentElement.classList.add(theme);
+              } catch (e) {}
+            `,
+          }}
+        />
         <Provider>
           <AnimatedBackground />
           {children}
           <Toaster />
           <ThemeSwitcher />
-          <SiteFooter socialLinks={socialLinks}/>
         </Provider>
-
       </body>
     </html>
   );

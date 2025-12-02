@@ -6,15 +6,26 @@ export interface Project {
   id: string;
   period: string;
   title: string;
-  projectUrl?: string ;
+  projectUrl?: string;
   description: string;
-  imageUrl?: string ;
-  repositoryUrl?: string ; 
+  imageUrl?: string;
+  repositoryUrl?: string;
+  tags: Tag[];
+}
+
+export interface WorkExperience {
+  id: string;
+  period: string;
+  title: string;
+  company: string;
+  description: string;
+  imageUrl?: string;
+  repositoryUrl?: string;
   tags: Tag[];
 }
 
 export interface SocialLink {
-  platform: 'GitHub' | 'LinkedIn'  | 'Email' | 'Curriculum' ;
+  platform: 'GitHub' | 'LinkedIn' | 'Email' | 'Curriculum';
   url: string;
   handle: string;
 }
