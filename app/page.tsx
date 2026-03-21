@@ -3,6 +3,8 @@ import { VStack } from "@chakra-ui/react";
 import { loadHomePageData } from "@/features";
 import { AboutSection, ContactSection, HeroSection, MainContainer, ProjectSection, SiteFooter, WorkSection } from "@/UIComponents";
 
+// On-demand revalidation only (via webhook)
+export const revalidate = false;
 
 export default async function HomePage() {
 
